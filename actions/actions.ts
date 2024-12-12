@@ -75,7 +75,7 @@ export async function deleteDocument(roomId : string){
      }catch(error){
      
             console.error("Error occurred during document deletion:", error);
-            return { success: false, message: error.message || "An unknown error occurred" };
+            return { success: false, message: error || "An unknown error occurred" };
         
         
      }
@@ -92,7 +92,7 @@ export async function inviteUserToRoom(roomId:string , email:string){
 
     }catch(error){
         console.error("Error occurred during Inviting user:", error);
-        return { success: false, message: error.message || "An unknown error occurred" };
+        return { success: false, message: error || "An unknown error occurred" };
     }
 }
 export async function RemoveUserFromDocument(roomId : string , email:string){
@@ -107,6 +107,6 @@ export async function RemoveUserFromDocument(roomId : string , email:string){
 
     }catch(error){
         console.error("Error occurred during Removing user from document:", error);
-        return { success: false, message: error.message || "An unknown error occurred" };
+        return { success: false, message: error || "An unknown error occurred" };
     }
 }

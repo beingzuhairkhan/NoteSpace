@@ -10,7 +10,7 @@ import {
     DialogTrigger,
 } from "@/components/ui/dialog"
 
-import { useState, useTransition , FormEvent } from 'react'
+import { useState, useTransition  } from 'react'
 import { Button } from "./ui/button"
 import { RemoveUserFromDocument } from "../actions/actions"
 import { toast } from "sonner"

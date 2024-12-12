@@ -1,6 +1,6 @@
 'use client';
 import Document from '@/components/Document'
-import React, { use } from 'react';
+import React from 'react';
 interface DocumentPageProps {
   params: {
     id: string;

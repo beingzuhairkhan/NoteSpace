@@ -57,7 +57,7 @@ const ChatToDocument = ({ doc }: { doc: Y.Doc }) => {
                 }
             } catch (error) {
                 // Use a single string argument for `toast.error`
-                toast.error(`An error occurred while translating the document: ${error.message}`);
+                toast.error(`An error occurred while translating the document: ${error}`);
             }
         });
         

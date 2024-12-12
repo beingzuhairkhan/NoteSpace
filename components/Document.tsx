@@ -12,7 +12,7 @@ import InviteUser from './InviteUser'
 import ManageUser from './ManageUser'
 import Avatars from './Avatars'
 const Document = ({ id }: { id: string }) => {
-    const [data , Loading , error] = useDocumentData(doc(db , "documents" , id)) ; //useDocumentData read the contents of a specific Firestore document in real time.
+    const [data ] = useDocumentData(doc(db , "documents" , id)) ; //useDocumentData read the contents of a specific Firestore document in real time.
     //doc : It creates a reference to a specific document in a Firestore collection
     //updatedoc : update the documents
     const [input, setInput] = useState("");
