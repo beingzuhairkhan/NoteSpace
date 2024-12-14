@@ -1,15 +1,15 @@
 'use client';
 
 import { useMyPresence, useOthers } from '@liveblocks/react/suspense';
-import React, { PointerEvent, useEffect } from 'react';
-import FollowPointer from './FollowPointer';
+import React, { PointerEvent } from 'react';
+
 
 type LiveCursorProviderProps = {
   children: React.ReactNode;
 };
 
 function LiveCursorProvider({ children }: LiveCursorProviderProps) {
-  const [myPresence, updateMyPresence] = useMyPresence();
+  const [, updateMyPresence] = useMyPresence();
   const others = useOthers();
 
   // Handle pointer movement to update cursor position

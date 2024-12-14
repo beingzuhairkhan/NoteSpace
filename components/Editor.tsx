@@ -29,15 +29,17 @@ function BlockNote({ doc, provider, darkMode }: EditorProps) {
         return <div>Loading user data...</div>;
     }
 
+    
+
     const editor = useCreateBlockNote({
         collaboration: {
-            provider,
-            fragment: doc.getXmlFragment("document-store"),
-            user: {
-                name: userInfo.name || "Anonymous",
-                color: stringToColor(userInfo.email || "")
-            }
-        }
+        provider,
+        fragment: doc.getXmlFragment("document-store"),
+        user: {
+                name: userInfo.name ,
+                color: stringToColor(userInfo.email)
+            },
+        },
     });
 
     return (
