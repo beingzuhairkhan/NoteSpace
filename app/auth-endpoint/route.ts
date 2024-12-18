@@ -5,19 +5,19 @@ import { adminDB } from '../../firebase-admin';
 
 export async function POST(req: NextRequest) {
   try {
-    // Ensure the user is authenticated
+
     // console.log("Liveblocks Key:", process.env.NEXT_PUBLIC_LIVE_BLOCK_KEY);
     auth.protect()
     const { sessionClaims } = await auth();
     //  console.log("Session Claims:", sessionClaims);
 
-    // Validate that sessionClaims and essential properties are available
+  
     if (!sessionClaims || !sessionClaims.email ) {
       throw new Error("Session claims are missing or incomplete");
     }
 
-    // Parse the request body to get the room name
-    const body = await req.json(); // Or req.body, depending on how the body is being parsed
+  
+    const body = await req.json();
     // console.log("Request Body:", body);
     const { room } = body;
     // console.log("Room:", room);
@@ -26,12 +26,12 @@ export async function POST(req: NextRequest) {
       throw new Error("Room name is required");
     }
 
-    // Prepare the Liveblocks session using user information
+    
     const session = liveblocks.prepareSession(sessionClaims?.email, {
       userInfo: {
-         name: sessionClaims?.fullname, // Ensure consistency in property name
+         name: sessionClaims?.fullname, 
         email: sessionClaims?.email,
-         avatar: sessionClaims?.image, // Default to empty string if image is missing
+         avatar: sessionClaims?.image, 
       },
     });
     // console.log("Session" , session)
@@ -54,17 +54,14 @@ export async function POST(req: NextRequest) {
 
     // console.log("Liveblocks Authorization Body:", body);
 
-    // Return token to client
+    
     // return NextResponse.json({ token: body.token }, { status });
     return new Response(body , {status})
     } else {
       throw new Error("User is not authorized to access this room");
     }
   } catch (error) {
-    // Log the error for debugging
-    console.error("Error in POST handler:", error);
 
-    // Handle errors and return a response
     return NextResponse.json({ error }, { status: 500 });
   }
 }

@@ -14,6 +14,6 @@ const firebaseConfig = {
 const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
 const db = getFirestore(app);
 
-console.log("Firebase database connected successfully."); // Connection message
+console.log("Firebase database connected successfully."); 
 
-export { db }; // ES module export
+export { db }; 

@@ -13,11 +13,10 @@ import ManageUser from './ManageUser'
 import Avatars from './Avatars'
 const Document = ({ id }: { id: string }) => {
     const [data ] = useDocumentData(doc(db , "documents" , id)) ; //useDocumentData read the contents of a specific Firestore document in real time.
-    //doc : It creates a reference to a specific document in a Firestore collection
-    //updatedoc : update the documents
+  
     const [input, setInput] = useState("");
     const [isUpdating, startTransition] = useTransition(); // add transtion while updating the input ex : updating...
-    // const isOwner = useOwner()
+   
     const isOwner = useOwner()
 
     useEffect(()=>{
@@ -56,10 +55,10 @@ const Document = ({ id }: { id: string }) => {
                                 </>
                         )
                     }
-                    {/* isOwner condition can be handled here */}
+                  
                 </form>
             </div>
-            <div className="flex max-w-6xl mx-auto justify-between items-center mb-5" >
+            <div className="flex max-w-6xl mx-auto justify-between items-center mb-5 " >
                 <ManageUser/>
                
                <Avatars/>

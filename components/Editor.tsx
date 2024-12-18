@@ -69,13 +69,13 @@ const Editor = () => {
     }, [room]);
 
     if (!doc || !provider) {
-        return <div>Loading...</div>; // Display loading state until initialization is complete
+        return <div>Loading...</div>; 
     }
 
     const buttonStyle = `hover:text-white ${darkMode ? "text-gray-300 bg-gray-700 hover:bg-gray-100 hover:text-gray-700" : "text-gray-700 bg-gray-200 hover:bg-gray-300 hover:text-gray-700"}`;
 
     return (
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-6xl mx-auto ">
             <div className="flex items-center justify-end mb-10 gap-2">
                 <TranslateDocument doc={doc} />
                 <ChatToDocument doc={doc} />

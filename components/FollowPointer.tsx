@@ -7,7 +7,7 @@ type FollowPointerProps = {
     info: {
         name: string;
         email: string;
-        avatar?: string; // Optional avatar
+        avatar?: string; /
     };
     x: number;
     y: number;

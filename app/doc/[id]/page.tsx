@@ -11,7 +11,7 @@ const DocumentPage = ({ params }: DocumentPageProps) => {
 
   const id = React.use(params)?.id;
   if (!id) {
-    return <div>Loading...</div>; // Handle loading or error state
+    return <div>Loading...</div>; 
   }
   return (
     <div className="flex flex-col flex-1 min-h-screen">

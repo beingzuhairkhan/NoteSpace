@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "notion-clone-6235e",
+  "private_key_id": "087ebb2ff830245198d1e8918cf2fbf19101c7c0",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEugIBADANBgkqhkiG9w0BAQEFAASCBKQwggSgAgEAAoIBAQDAowp2qJ2ddj4I\n5WZV2Qt5h8OQzgf1SK6LwbDq+tCtA2T8mQqzkX8wzCwButMExOdBuMt5lbj0w6PT\nKqI6P3/DiFUsN+cGALAF3F7Z1GF9bq5/L+zj22CdKCYJWqfMWhOLv6q9+IXMBL++\nc7j4A6CONmbqiOBgqQDpT/9ZOAVDHWkqLClKSVOTjJ/DE1g+4FfCTx2Dk3K+d0VD\nXn3rbOrEvHPNLivpU0AzJV2LzKWMvNMPQ532g+N5N0r1I69NsvG6pjOVq4MAiGts\n59ouT00imNXfibQ7vHGZdJfq2VLjKbLt/p5qak00HyvAk2dya7LaAlAKtbi0Viqh\nxzwUxToZAgMBAAECgf9J7kjVwWC8TeUBBQmBaQs+WRx1Np1XRc23VV7Qz/HGdMcN\nKq8wu2ZVFAbPoyPZcLhQQNvWjd+uEGePY41fTX97S5dkoQ/I/fqQRUMh1qCTwya1\nKW+BA3DQ39e5P1Gm2+skdyrQPdEbu7bbIQ6cIMg9zCMzX9S9RB9Va55UX2ullbl7\nAquTyGtvXKSYeGkHcIZ4CesogiduLLugMRqXnQojpD/AUME5GbF1SC7dgiqbPlIL\nk3VZbPTRTLCgrL/d0Efw/jcC4cdCz3zC4GKHL2qjucx5cHgKbMct7v801UwjUalu\npzKujITQXXXK7BwuceSW1rEzWO0vMtdlf5+KOOUCgYEA5WRvoNVz83r88m/1/o6V\nyNaR+vqXi2+JXvCYPfD0dgmXrfCOE69iGpyUF2UdBaOXk9StmcLwe3XeBvEiIxwb\nmwq1eCaCWFI2qbpnAz5Vy6YuSZW9E9nxFUnA+cE5VF4zCOHncJosYo7PKlaKfTSi\nGCbsvV9onqKMH0fAsSZ9fFUCgYEA1vswvaSCARNEkB9b3pNenC/4DdQVzBvqN53h\nqWqYrrLazfU15p6ii7SYuRCw2Eh8EtU8w+hQ0Y67m34rjrEZ4rmmEMGi4AyKbsha\nrX8ZkZN+5vZziFULBMB+ZSBL9CwR5KuDn5ZGg24/AaeSnRsevnAJxBLFR5Wyht6t\nP+ttCrUCgYBK9c8kl5wUbJRMBRo13RJFVxjNEyaCgig5xhV56Et6ZxgR1xIWjLFa\nUOBz5K7fMN5PiKhSHsnHDnVHf3TQVFcRCybR5IOjqPoD7M3M2YnfyqZFlZD787Q8\naKWO9/1r/Hxg4rFmsnremhxIkY8f6xstGUszdwIRFL0FW8U0HofTIQKBgBdkT6Ji\n8w5g5VX1Q47NZD8EbS48BH8oDm0szbAcfC6OIYbFhq7oVfFzniaM7WErSezWrPz4\nG0siB8Hckaq+FH36C1rJZwqP8sQpIsy8BrEzZlyFNn8AGenTdC1WvUz9OpkyHGlR\n9aw5Y7uvWyGjIM5B7J4cGME4RautMRbCbCP9AoGAWq0LIIdjcUurte3I/17VPpxF\nq7iGWhYwAAJbB9B0hDoGIFSc/ziqWhCBzYL4rdn+Cx8StmDZ7T3vu0L9PUG1+xMt\nx6H7Eu9UhKmq8pSP+lCs4jwxCXpA00SBXtX6HF8FGQNpvFHK8Y1+FcIXPUUS+Ujm\n6rw1QjhZMgkKURCFWYs=\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-x9u4k@notion-clone-6235e.iam.gserviceaccount.com",
+  "client_id": "108704753962817725378",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-x9u4k%40notion-clone-6235e.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

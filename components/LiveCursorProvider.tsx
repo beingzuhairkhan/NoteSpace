@@ -12,7 +12,7 @@ function LiveCursorProvider({ children }: LiveCursorProviderProps) {
   const [, updateMyPresence] = useMyPresence();
   const others = useOthers();
 
-  // Handle pointer movement to update cursor position
+
   function handlePointerMove(e: PointerEvent<HTMLDivElement>) {
     const cursor = { x: Math.floor(e.pageX), y: Math.floor(e.pageY) };
     // console.log('Cursor Position:', cursor); // Debug output
