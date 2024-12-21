@@ -1,14 +1,21 @@
 import { auth } from '@clerk/nextjs/server';
 import RoomProvider from '@/components/RoomProvider';
+import { ReactNode } from 'react';
 
-async function DocLayout({ children, params }: { children: React.ReactNode; params: { id: string } }) {
- 
-  const { id } = await params;
+// Define the correct type for `params`
+interface DocLayoutProps {
+  children: ReactNode;
+  params: Promise<{ id: string }>; 
+}
 
-  auth.protect();
+async  function DocLayout({ children, params }: DocLayoutProps) {
+  const  id  = (await params).id;
+
+  auth.protect();  // Ensure authentication
 
   return (
     <div>
+      {/* Optionally show the room id */}
       {/* <p>Authenticated Room ID: {id}</p> */}
       <RoomProvider roomId={id}>
         {children}
@@ -18,41 +25,3 @@ async function DocLayout({ children, params }: { children: React.ReactNode; para
 }
 
 export default DocLayout;
-
-
-// interface Params {
-//   id: string;
-// }
-
-// async function DocLayout({
-//   children,
-//   params,
-// }: {
-//   children: React.ReactNode;
-//   params: Params ;
-// }) {
-//   const { id } = params;
-
-//   const { userId } =   await auth.protect();
-//   // console.log("UserId" , userId)
-
-//   if (!userId) {
-//     // Redirect to sign-in page
-//     return (
-//       <div>
-//         <p>Redirecting to sign-in...</p>
-//       </div>
-//     );
-//   }
-
-//   return (
-//     <div>
-//       {/* <p>Authenticated Room ID: {id}</p> */}
-//     <RoomProvider roomId={id}>
-//       {children}
-//     </RoomProvider>
-//     </div>
-//   );
-// }
-
-// export default DocLayout;

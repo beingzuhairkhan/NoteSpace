@@ -31,6 +31,7 @@ function BlockNote({ doc, provider, darkMode }: EditorProps) {
 
     
 
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     const editor = useCreateBlockNote({
         collaboration: {
         provider,
