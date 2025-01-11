@@ -9,7 +9,7 @@ interface DocumentPageProps {
 
 const DocumentPage = ({ params }: DocumentPageProps) => {
 
-  const id = React.use(params)?.id;
+  const { id } = params;
   if (!id) {
     return <div>Loading...</div>; 
   }

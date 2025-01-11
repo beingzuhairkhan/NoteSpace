@@ -1,6 +1,7 @@
 import { initializeApp, getApps, getApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
+// Your Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyBK1plk3vsOxTmYfvhDLSsEb9zoHNm-swU",
   authDomain: "notion-clone-6235e.firebaseapp.com",
@@ -11,9 +12,13 @@ const firebaseConfig = {
   measurementId: "G-TDVHNWJV3L",
 };
 
+// Initialize Firebase
 const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
+
+// Get Firestore database
 const db = getFirestore(app);
 
-console.log("Firebase database connected successfully."); 
+// Test connection to Firebase Firestore
+console.log("Firebase database connected successfully.");
 
-export { db }; 
+export { db };

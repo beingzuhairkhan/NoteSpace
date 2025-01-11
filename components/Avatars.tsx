@@ -8,16 +8,28 @@ import {
     TooltipTrigger,
 } from "@/components/ui/tooltip"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { useEffect } from 'react'
 
 const Avatars = () => {
     const others = useOthers()
     const self = useSelf()
 
+    useEffect(() => {
+        console.log("Self:", self)
+        console.log("Others:", others)
+    }, [self, others])
+
+    // If self or others are not available, we can return an empty array to prevent errors
     const all = [
-        { id: self?.id, info: self?.info },
-        ...others.map((other) => ({ id: other.id, info: other.info })),
+        { id: self?.id, name: self?.info?.name || "You", avatar: self?.info?.avatar },
+        ...others?.map((other) => ({
+            id: other.id,
+            name: other.info?.name || "Unknown",
+            avatar: other.info?.avatar,
+        })) || [],
     ]
-    console.log("other" , others , all)
+
+    console.log("All collaborators:", all)
 
     return (
         <div className="flex items-center">
@@ -26,18 +38,18 @@ const Avatars = () => {
             </p>
             <div className="flex space-x-[-10px]">
                 {all.map((other, i) => {
-                    console.log("Avatar data:", other) 
+                    if (!other) return null // Prevent any undefined or null values from being rendered
                     return (
-                        <TooltipProvider key={other.id + i}>
+                        <TooltipProvider key={`${other.id}-${i}`}>
                             <Tooltip>
                                 <TooltipTrigger>
                                     <Avatar className="border-2 hover:z-50">
-                                        <AvatarImage src={other.info?.avatar} alt={other.info?.name} />
-                                        <AvatarFallback>{other.info?.name || "?"}</AvatarFallback>
+                                        <AvatarImage src={other.avatar || "/default-avatar.png"} alt={other.name} />
+                                        <AvatarFallback>{other.name.charAt(0)}</AvatarFallback>
                                     </Avatar>
                                 </TooltipTrigger>
                                 <TooltipContent>
-                                    <p>{self?.id === other.id ? "You" : other.info?.name || "Anonymous"}</p>
+                                    <p>{self?.id === other.id ? "You" : other.name}</p>
                                 </TooltipContent>
                             </Tooltip>
                         </TooltipProvider>

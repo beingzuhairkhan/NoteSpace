@@ -26,6 +26,7 @@ interface RoomDocument extends DocumentData {
 
 const Sidebar = () => {
     const { user } = useUser();
+    // console.log("user" , user)
     const [groupedData, setGroupedData] = useState<{
         owner: RoomDocument[];
         editor: RoomDocument[];
@@ -45,6 +46,7 @@ const Sidebar = () => {
             )
          
     );
+  
 
     useEffect(() => {
         if (!data) return;
@@ -55,17 +57,18 @@ const Sidebar = () => {
         }>(
             (acc, curr) => {
                 const roomData = curr.data() as RoomDocument;
-                // console.log("roomData" , roomData)
+                //  console.log("roomData" , roomData)
+                const roomWithId = { ...roomData, id: curr.id };
                 if (roomData.role === "owner") {
-                    acc.owner.push({ id: curr.id, ...roomData });
+                    acc.owner.push(roomWithId);
                 } else  {
-                    acc.editor.push({ id: curr.id, ...roomData });
+                    acc.editor.push(roomWithId);
                 }
                 return acc;
             },
             { owner: [], editor: [] }
         );
-        // console.log("grouped", grouped)
+        //  console.log("grouped", grouped)
         setGroupedData(grouped);
     }, [data]);
 

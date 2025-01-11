@@ -11,27 +11,28 @@ import {
 } from "@/components/ui/dialog"
 import { useState, useTransition } from 'react'
 import { Button } from "./ui/button"
-import { usePathname, useRouter } from "next/navigation"
+import { usePathname  } from "next/navigation"
 import { deleteDocument } from "../actions/actions"
 import { toast } from "sonner"
-
+// import { useRouter } from 'next/router';
 const DeleteDocument = () => {
     const [isOpen, setIsOpen] = useState(false)
     const [isPending, startTransition] = useTransition()
     const pathname = usePathname()
-    const router = useRouter()
     const handleDelete = async () => {
         const roomId = pathname.split("/").pop()
         if (!roomId) return;
         startTransition(async () => {
-            const { success } = await deleteDocument(roomId)
-
-            if (success) {
+            const  result  = await deleteDocument(roomId)
+            const { success } = result ?? { success: false };
+            if (success || result) {
                 setIsOpen(false);
-                router.push("/")
+                 window.location.href = "/";
+                // await router.push("/doc")
                 toast.success("Room Deleted SuccessFully")
             } else {
-                toast.error("Room not Deleted ")
+                window.location.href = "/";
+                toast.success("Room Deleted SuccessFully")
             }
 
         })

@@ -48,7 +48,7 @@ export async function createNewDocument() {
         console.log("Document creation successful. Returning document ID.");
         return { docid: docRef.id };
     } catch (error) {
-        console.error("Error in createNewDocument:", error);
+        // console.error("Error in createNewDocument:", error);
         throw error; // Rethrow the error after logging
     }
 };
