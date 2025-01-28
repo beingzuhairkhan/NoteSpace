@@ -1,15 +1,18 @@
 import { auth } from '@clerk/nextjs/server';
 import RoomProvider from '@/components/RoomProvider';
 
-async function DocLayout({ children, params }: { children: React.ReactNode; params: { id: string } }) {
-  // Await the `params` to ensure it's resolved before accessing `id`
-  const { id } = await params;
+type DocLayoutProps = {
+  children: React.ReactNode;
+  params: Promise<{ id: string }>; // Type for the `params` prop as a Promise
+};
+
+export default async function DocLayout({ children, params }: DocLayoutProps) {
+  const { id } = await params; // Awaiting `params` as it is now a Promise
 
   auth.protect();
 
   return (
     <div>
-      {/* <p>Authenticated Room ID: {id}</p> */}
       <RoomProvider roomId={id}>
         {children}
       </RoomProvider>
@@ -17,5 +20,5 @@ async function DocLayout({ children, params }: { children: React.ReactNode; para
   );
 }
 
-export default DocLayout;
 
+// export default DocLayout;

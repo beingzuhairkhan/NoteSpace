@@ -9,7 +9,6 @@ const Header = () => {
 
   return (
     <div className="flex items-center justify-between p-5">
-      {/* Display user's name if signed in */}
       {user && (
         <h1 className="text-2xl">
           {user?.firstName}
@@ -21,7 +20,6 @@ const Header = () => {
       <BreadCrumb />
 
       <div>
-        {/* If user is signed out, show custom Sign-In button */}
         <SignedOut>
           <SignInButton>
             {/* Custom Button */}

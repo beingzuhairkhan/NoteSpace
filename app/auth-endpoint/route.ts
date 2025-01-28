@@ -29,7 +29,7 @@ export async function POST(req: NextRequest) {
     
     const session = liveblocks.prepareSession(sessionClaims?.email, {
       userInfo: {
-         name: sessionClaims?.fullname, 
+         name: sessionClaims?.fullName, 
         email: sessionClaims?.email,
          avatar: sessionClaims?.image, 
       },
@@ -47,7 +47,7 @@ export async function POST(req: NextRequest) {
     if (userInRoom?.exists) {
       session.allow(room, session.FULL_ACCESS);
       const { body, status } = await session.authorize();
-      
+    
     if (!body) {
       throw new Error("Token is missing from Liveblocks session response.");
     }

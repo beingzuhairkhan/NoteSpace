@@ -8,16 +8,13 @@ import {
     TooltipTrigger,
 } from "@/components/ui/tooltip"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { useEffect } from 'react'
+
 
 const Avatars = () => {
     const others = useOthers()
     const self = useSelf()
 
-    useEffect(() => {
-        console.log("Self:", self)
-        console.log("Others:", others)
-    }, [self, others])
+  
 
     // If self or others are not available, we can return an empty array to prevent errors
     const all = [
@@ -29,7 +26,7 @@ const Avatars = () => {
         })) || [],
     ]
 
-    console.log("All collaborators:", all)
+   
 
     return (
         <div className="flex items-center">

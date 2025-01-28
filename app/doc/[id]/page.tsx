@@ -1,25 +1,31 @@
-'use client';
-import Document from '@/components/Document'
+
+
+import Document from '@/components/Document';
 import React from 'react';
+
 interface DocumentPageProps {
-  params: {
-    id: string;
-  };
+  params: Promise<{ id: string }>;
 }
 
-const DocumentPage = ({ params }: DocumentPageProps) => {
+export default async function DocumentPage({ params }: DocumentPageProps) {
+  // const [id, setId] = React.useState<string | null>(null);
 
-  const { id } = params;
+  // React.useEffect(() => {
+  //   params.then(({ id }) => {
+  //     setId(id);
+  //   });
+  // }, [params]);
+  const id = (await params).id;
+  console.log(id)
   if (!id) {
-    return <div>Loading...</div>; 
+    return <div>Loading...</div>;
   }
+
   return (
     <div className="flex flex-col flex-1 min-h-screen">
-        <Document id={id}/>
-    
+      <Document id={id} />
       {/* <p className="mt-2 text-gray-700">Document ID: {id}</p> */}
     </div>
   );
-};
+}
 
-export default DocumentPage;
