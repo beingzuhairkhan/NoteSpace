@@ -42,11 +42,11 @@ const ChatToDocument = ({ doc }: { doc: Y.Doc }) => {
                         question: input,
                     }),
                 });
-                // console.log("res" , res.body)
+                 console.log("res" , res.body)
         
                 if (res.ok) {
                     const jsonResponse = await res.json();
-                    // console.log("jsonResponse:", jsonResponse); // Log the full response
+                     console.log("jsonResponse:", jsonResponse); // Log the full response
                     // const { message } = jsonResponse; 
                     setInput("");
                     // console.log("message", jsonResponse);
@@ -57,6 +57,7 @@ const ChatToDocument = ({ doc }: { doc: Y.Doc }) => {
                 }
             } catch (error) {
                 // Use a single string argument for `toast.error`
+                console.log("chat" , error)
                 toast.error(`An error occurred while translating the document: ${error}`);
             }
         });

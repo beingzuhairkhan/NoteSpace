@@ -125,7 +125,7 @@ const Sidebar = () => {
 );
 
     return (
-        <div className="p-2 md:p-5 bg-gray-200 relative">
+        <div className="p-2 md:p-5 bg-gray-100 relative">
             <div className="md:hidden">
                 <Sheet>
                     <SheetTrigger>

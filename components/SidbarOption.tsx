@@ -18,7 +18,7 @@ function SidbarOption({ href, id }: { href: string; id: string }) {
         className={`relative flex items-center justify-between px-4 py-2 border rounded-md shadow-sm transition-all duration-200 
           ${
             isActive
-              ? "bg-gray-300 font-bold border-black text-black"
+              ? "bg-gray-100 font-bold border-black text-black"
               : "border-gray-400 hover:bg-gray-100 text-gray-700"
           }`}
       >
